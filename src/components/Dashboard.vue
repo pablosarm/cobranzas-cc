@@ -64,14 +64,14 @@
         </v-row>
 
         <v-row>
-          <v-col cols="12" md="6" class="align-self-stretch">
+          <v-col cols="12" md="6">
             <bar-chart
-              :title="'Cobros por departamento'"
+              :title="'Cobros por Mes'"
               :chart-data="collectionsByDepartment"
               :chart-options="chartOptions"
             ></bar-chart>
           </v-col>
-          <v-col cols="12" md="6" class="align-self-stretch">
+          <v-col cols="12" md="6">
             <doughnut-chart
               :title="'Cobros pendientes vs completados'"
               :chart-data="collectionsPendingVsCompleted"
@@ -107,10 +107,10 @@ export default {
       totalIncome: "$420,000",
       chartOptions: {
         responsive: true,
-        aspectRatio: 1,
+        keepAspectRatio: true,
       },
       collectionsByDepartment: {
-        labels: ["Ventas", "Soporte", "Finanzas", "Marketing"],
+        labels: ["Enero", "Febrero", "Marzo", "Abril"],
         datasets: [
           {
             label: "Cobros",
@@ -134,10 +134,6 @@ export default {
 </script>
 
 <style>
-.v-toolbar {
-  margin-top: 0;
-}
-
 .red-bell {
   animation: shake 0.8s ease-in-out 3;
 }
